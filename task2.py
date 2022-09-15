@@ -1,12 +1,11 @@
 # Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
+from math import ceil
+
+
 def product_of_pairs(list_numbers):
     product = list()
-    if len(list_numbers) % 2 == 0:
-        half_list_length = int(len(list_numbers)/2)
-    else:
-        half_list_length = int(len(list_numbers)/2)+1
-    for i in range(half_list_length):
+    for i in range(ceil(len(list_numbers)/2)):
         product.append(list_numbers[i]*list_numbers[-i-1])
     return product
 
